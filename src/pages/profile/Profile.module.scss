@@ -1,0 +1,86 @@
+@use '../../App';
+
+.body {
+    display: flex;
+}
+
+.profile {
+    @include App.flexPos(center, center);
+    width: 100%;
+    height: 100vh;
+    .profileCard {
+        @include App.contentCard(max(70%, 540px), max(70%, 500px), 20px);
+        display: flex;
+    }
+    span {
+        color: var(--text-color);
+    }
+}
+
+.left {
+    width: calc(100% / 3);
+    border-right: 1px solid gray;
+    .top {
+        @include App.flexPos(null, center);
+        flex-direction: column;
+        padding: 20px 0;
+        span {
+            font-weight: 500;
+            font-size: 25px;
+        }
+    }
+    .btns {
+        display: flex;
+        flex-direction: column;
+        li {
+            border-bottom: 1px solid gray;
+            margin: 0;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--text-color);
+            &:first-child {
+                border-top: 1px solid gray;
+            }
+            &:hover {
+                background-color: var(--off-color);
+            }
+            &.activeBtn {
+                background-color: var(--off-color);
+            }
+        }
+    }
+}
+
+.img {
+    border-radius: 50%;
+    margin: 20px;
+    width: 120px;
+    height: 120px; 
+    overflow: hidden;
+    position: relative;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    label {
+        position: absolute;
+        top: 80%;
+        left: 0;
+        height: 50px;
+        width: 100%;
+        background-color: var(--off-color);
+        text-align: center;
+        font-size: 13px;
+        display: none;
+        cursor: pointer;
+    }
+    &:hover label{
+        display: block;
+    }
+}
+
+.settings {
+    padding: 20px;
+    width: calc(100% / 3 * 2);
+}

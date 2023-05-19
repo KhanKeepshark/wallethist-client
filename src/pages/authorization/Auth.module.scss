@@ -1,0 +1,70 @@
+@use '../../App.scss';
+
+.flex {
+    display: flex;
+}
+
+.auth {
+    display: flex;
+    flex-direction: column;
+    @include App.contentCard(100vh, 450px, 15% 50px, $br: 0px);
+    label {
+        margin: 20px 0 10px 0;
+        color: var(--text-color);
+    }
+    span {
+        color: red;
+    }
+}
+
+.iconInput {
+    position: relative;
+    height: 50px;
+    input {
+        position: absolute;
+        color: var(--text-color);
+        width: 100%;
+        font-size: 15px;
+        padding: 14px 20px;
+        background-color: var(--body-color);
+        border-radius: 10px;
+        border: none;
+    }
+    svg {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-60%);
+        right: 15px;
+        color: var(--text-color);
+        cursor: pointer;
+        &.isClose {
+            display: none;
+        }
+    }
+}
+
+.authBtn {
+    background-color: var(--purple-color);
+    border-radius: 10px;
+    padding: 14px 0;
+    color: white;
+    @include App.flexPos(center, null);
+    margin: 40px 0;
+    &:hover {
+        filter: brightness(1.2);
+    }
+}
+
+.authSwitch{
+    @include App.flexPos(center, null);
+    span {
+        color: var(--purple-color);
+        margin-left: 10px;
+        cursor: pointer;
+    }
+}
+
+.mainPageBg{
+    width: calc(100%);
+    @include App.flexPos(center, center);
+}

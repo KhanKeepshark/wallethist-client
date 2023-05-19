@@ -1,0 +1,45 @@
+@use '../../../../App.scss';
+
+.list {
+    span {
+        color: var(--text-color);
+        width: calc(100% / 5 - 10px);
+    }
+}
+
+.heading {
+    @include App.flexPos(space-between, center);
+    padding: 20px 25px;
+    margin: 10px 0;
+    span {
+        cursor: pointer;
+    }
+    .trashIcon {
+        font-size: 18px;
+        cursor: pointer;
+        color: var(--text-color);
+    }
+}
+
+.checkbox {
+    height: 18px;
+    width: 18px;
+    border: solid var(--text-color);
+    @include App.flexPos(center, center);
+    border-radius: 4px;
+    svg {
+        color: var(--text-color);
+        transform: scale(0);
+        transition: var(--tran-02);
+    }
+    &.check svg {
+        transform: scale(1);
+    }
+}
+
+.empty {
+    height: calc(100vh - 235px);
+    @include App.flexPos(center, center);
+    font-size: 60px;
+    color: var(--off-color);
+}

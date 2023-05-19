@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+  --body-color: #F1F4FA;
+  --card-color: white;
+  /* --text-color: #3A36DB; */
+  --primary-color: #99B2C6;
+  --toggle-color: #c9d5de;
+  --outTextTitle-color: black;
+  --outText-color: #515b6b;
+  --box1-color: #f5f7f9;
+  --box1Icon-color: #3A36DB;
+  --box2-color: #cdeeec;
+  --box2Icon-color: #03a89e;
+  --box3-color: #fff0f8;
+  --box3Icon-color: #ff69b4;
+  --category-color: rgb(58, 54, 219, 0.1);
+
+  --font-family: 'Roboto', sans-serif;
+
+  --tran-02: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.4s ease;
+  --tran-05: all 0.5s ease;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--body-color);
+  height: 100vh;
+  transition: var(--tran-05);
+  overflow-x: hidden;
+}
+
+[class = "dark"] {
+  --body-color: #1A202C;
+  --card-color: #364153;
+  /* --text-color: #605CFF; */
+  --primary-color: #99B2C6;
+  --toggle-color: #c9d5de;
+  --outTextTitle-color: white;
+  --outText-color: white;
+  --box1-color: #4A5464;
+  --box1Icon-color: #605Cff;
+  --box2-color: #356264;
+  --box2Icon-color: #2fe5a7;
+  --box3-color: #4a455d;
+  --box3Icon-color: #ff69b4;
+  --category-color: rgb(58, 54, 219, 0.5);
+}
+

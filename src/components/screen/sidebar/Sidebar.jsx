@@ -1,0 +1,87 @@
+import styles from './Sidebar.module.scss'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faChartColumn, faList, faRightFromBracket, faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
+import { useContext, useEffect } from 'react'
+import { Context } from '../../../main'
+import { Link } from 'react-router-dom'
+import { AUTH_ROUTE, HOME_ROUTE, PROFILE_ROUTE, RECORD_LIST_ROUTE } from '../../routes/pathConsts'
+import { observer } from 'mobx-react-lite'
+
+const Sidebar = observer(({activeNav}) => {
+    const active = activeNav
+    const {navState, store} = useContext(Context)
+
+    useEffect(() => {
+        if (navState.darkMode) {
+            document.body.classList.add('dark')
+        } else {
+            document.body.classList.remove('dark')
+        }
+    }, [navState.darkMode])
+
+    const closeSidebar = (event) => {
+        if (event.target === event.currentTarget) {
+            navState.setNavClose(!navState.navClose)
+        }
+    }
+
+    return (
+        
+        <nav className={`${styles.sidebar} ${navState.navClose && styles.close}`} >
+            <header>
+                <div className={styles.imageText} onClick={closeSidebar}>
+                    <img className={styles.logoImg} src="logo.png" alt="logo" onClick={closeSidebar}/>
+                </div>
+            </header>
+            <div className={styles.menuBar} onClick={closeSidebar}>
+                <div className={styles.menu}>
+                    <li className={active === 1 && styles.active}>
+                        <Link to={HOME_ROUTE}>
+                            <div className={styles.icon}>
+                                <FontAwesomeIcon icon={faChartColumn} />
+                            </div>
+                            <span>Графики</span>
+                        </Link>
+                    </li>
+                    <li className={active === 2 && styles.active}>
+                        <Link to={RECORD_LIST_ROUTE}>
+                            <div className={styles.icon}>
+                                <FontAwesomeIcon icon={faList} />
+                            </div>
+                            <span>Данные</span>
+                        </Link>
+                    </li>
+                </div>
+                <div className={styles.bottomMenu}>
+                        <li className={`${styles.userLi} ${active === 3 && styles.active}`}>
+                            <Link to={PROFILE_ROUTE}>
+                                <div className={styles.user}>
+                                    <img src="user.png" alt="logo"/>
+                                </div>
+                                <span>Аккаунт</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link onClick={() => store.logoutUser()} to={AUTH_ROUTE}>
+                                <div className={styles.icon}>
+                                    <FontAwesomeIcon icon={faRightFromBracket} />
+                                </div>
+                                <span>Выйти</span>
+                            </Link>
+                        </li>
+                        <li onClick={() => navState.setDarkMode(!navState.darkMode)}>
+                            <div className={styles.moonSun}>
+                                <FontAwesomeIcon icon={faMoon} className={styles.moon}/>
+                                <FontAwesomeIcon icon={faSun} className={styles.sun}/>
+                            </div>
+                            <div className={styles.toggleSwitch}>
+                                <span className={styles.switch}></span>
+                            </div>
+                        </li>
+                </div>
+            </div>
+        </nav>
+    )
+})
+
+export default Sidebar

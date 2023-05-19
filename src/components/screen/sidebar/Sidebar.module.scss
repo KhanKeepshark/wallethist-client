@@ -1,0 +1,166 @@
+@use '../../../App';
+
+.sidebar {
+    background-color: var(--card-color);
+    width: 220px;
+    transition: var(--tran-05);
+    height: 100vh;
+    header {
+        position: relative;
+        .imageText {
+            padding: 30px 80px;
+            transition: var(--tran-05);
+            .logoImg {
+                width: 60px;
+            }
+        }
+    }
+    &.close {
+        width: 85px;
+        border-radius: 10px;
+        margin: 32px;
+        height: calc(100vh - 64px);
+        .imageText {
+            padding: 30px 10px;
+        }
+        span {
+            opacity: 0;
+        }
+        .switch {
+            width: 10px;
+        }
+    }
+    .menuBar {
+        @include App.flexPos(space-between, null);
+        height: calc(100% - 174px);
+        flex-direction: column;
+    }
+}
+
+li {
+    height: 50px;
+    margin-top: 6px;
+    @include App.flexPos(null, center);
+    a {
+        text-decoration: none;
+        @include App.flexPos(null, center);
+        height: 100%;
+        width: 100%;
+    }
+    .icon {
+        min-width: 60px;
+        height: 100%;
+        border-radius: 0 5px 5px 0;
+    }
+    svg {
+        font-size: 24px;
+        float: right;
+        margin: 13px 3px;
+        color: var(--off-color);
+    }
+    span {
+        margin-left: 13px;
+        font-size: 16px;
+        transition: var(--tran-02);
+        color: var(--off-color);
+    }
+    &.active {
+        span, svg {
+            color: var(--purple-color);
+        }
+        .icon {
+            background-color: var(--off-color);
+            transition: var(--tran-05);
+        }
+    }
+    &:hover {
+        span, svg {
+            color: var(--purple-color);
+        }
+        .icon {
+            background-color: var(--off-color);
+        }
+    }
+    // dark mode
+    .moonSun {
+        height: 50px;
+        width: 60px;
+        @include App.flexPos(flex-end, null);
+        svg {
+            position: absolute;
+            margin: 13px 6px;
+        }
+        cursor: pointer;
+    }
+    .toggleSwitch {
+        @include App.flexPos(center, center);
+        height: 100%;
+        min-width: 10px;
+        cursor: pointer;
+    }
+}
+
+// bottomMenu
+
+.userLi{
+    .user {
+        @include App.flexPos(center, null);
+        padding: 10px 0;
+        border-radius: 0 5px 5px 0;
+        &.active {
+            background-color: var(--off-color);
+        }
+        img {
+            margin-left: 29px;
+            width: 30px;
+            border-radius: 25%;
+            transition: var(--tran-05);
+        }
+    }
+    &:hover .user {
+        background-color: var(--off-color);
+    }
+    &.active .user{
+        background-color: var(--off-color);
+    }
+}
+
+// dark mode
+.sun {
+    opacity: 0;
+}
+
+.switch {
+    position: relative;
+    height: 16px;
+    width: 34px;
+    border-radius: 25px;
+    background-color: var(--off-color);
+    &::before {
+        height: 9px;
+        width: 9px;
+        background-color: white;
+        position: absolute;
+        content: '';
+        border-radius: 50%;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+        transition: var(--tran-02);
+    }
+}
+
+[class = "dark"] {
+    .switch::before {
+        left: 20px;
+    }
+    .logoImg {
+        filter: brightness(2);
+    }
+    .moon {
+        opacity: 0;
+    }
+    .sun {
+        opacity: 1;
+    }
+}

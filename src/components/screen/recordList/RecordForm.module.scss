@@ -1,0 +1,56 @@
+@use '../../../App';
+
+.recordForm {
+    background-color: var(--card-color);
+    padding: 10px 30px;
+    width: 400px;
+    transition: var(--tran-05);
+    transform-origin: right;
+    .title {
+        margin: 40px 0;
+        font-size: 22px;
+        color: var(--text-color);
+    }
+    .formData {
+        padding: 20px 0;
+        display: grid;
+        label {
+            margin: 20px 0 10px 0;
+            color: var(--text-color);
+        }
+        input {
+            color: var(--text-color);
+            font-size: 15px;
+            padding: 14px 20px;
+            background-color: var(--body-color);
+            border-radius: 10px;
+            border: none;
+        }
+        .btn {
+            background-color: var(--purple-color);
+            padding: 14px;
+            border-radius: 10px;
+            cursor: pointer;
+            color: white;
+            margin-top: 30px;
+            @include App.flexPos(center, center);
+            font-size: 15px;
+            &:hover {
+                filter: brightness(1.5);
+            }
+        }
+    }
+    &.close {
+        background-color: var(--body-color);
+        width: 0;
+        .title, .formData {
+            display: none;
+        }
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

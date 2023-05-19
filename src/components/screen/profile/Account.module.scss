@@ -1,0 +1,53 @@
+.account {
+    display: grid;
+    padding: 10%;
+    span {
+        margin: 7px 0;
+    }
+    input {
+        color: var(--text-color);
+        font-size: 15px;
+        padding: min(4%, 14px) 20px;
+        background-color: var(--body-color);
+        border-radius: 10px;
+        border: none;
+        margin: 3px 0;
+    }
+    .submit {
+        color: var(--text-color);
+        padding: min(3%, 10px) 10px;
+        text-align: center;
+        border: 1px solid gray;
+        margin: 20px 0;
+        position: relative;
+        &:hover {
+            background-color: var(--off-color);
+        }
+    }
+}
+
+.notification {
+    position: absolute;
+    bottom: 2px;
+    right: -40px;
+    border: 2px solid #67cc67;
+    border-radius: 50%;
+    padding: 3px 5px;
+    transform: scale(0);
+    transition: var(--tran-02);
+    svg {
+        font-size: 22px;
+        color: #67cc67;
+        transition: var(--tran-05);
+        transform: translateY(-20px);
+        opacity: 0%;
+    }
+    &.active {
+        transform: scale(1);
+        svg {
+            transform: translateY(0);
+            opacity: 100%;
+        }
+    }
+}
+

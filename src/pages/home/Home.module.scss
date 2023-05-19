@@ -1,0 +1,78 @@
+@use '../../App';
+
+.body {
+    display: flex;
+    .dashboard {
+        width: calc(100% - 250px);
+        padding: 35px 10px;
+    }
+}
+
+// top
+.topTitle {
+    font-size: 24px;
+    color: var( --text-color);
+}
+.boxes {
+    @include App.flexPos(space-between, center);
+    margin: 20px 0;
+}
+
+// charts
+.charts {
+    @include App.flexPos(space-between, null);
+    margin: 32px 0;
+    .barChart {
+        @include App.contentCard(400px, calc(100%/3 * 2 - 15px), 20px);
+        .settings {
+            @include App.flexPos(space-between, null);
+            padding: 0px 15px 5px 33px;
+            span {
+                color: var(--text-color);
+                font-weight: 500;
+            }
+        }
+        .chartBox {
+            width: calc(100%);
+            height: calc(100% - 40px);
+        }
+    }
+    .pieChart {
+        @include App.contentCard(400px, calc(100%/3 - 30px), 20px)
+    }
+}
+
+// activity
+.activity {
+    @include App.flexPos(space-between, null);
+    height: 240px;
+    .title {
+        color: var( --text-color);
+        font-size: 19px;
+        margin-bottom: 10px;
+    }
+    .lastActivity {
+        @include App.contentCard(null, calc(100%/3 * 2 - 15px), 26px 26px 17px 26px)
+    }
+    .topActivity {
+        @include App.contentCard(null, calc(100%/3 - 30px), 26px)
+    }
+    .data {
+        @include App.flexPos(space-between, null);
+        width: 100%;
+        color: var( --text-color);
+        padding: 10px 21px;
+        span {
+            width: 140px;
+            font-size: 13px;
+        }
+        &.topData {
+            border-bottom: solid;
+            border-color: var(--text-color);
+            margin-bottom: 10px;
+        }
+        &.categories:nth-child(odd) {
+            background-color: var(--dataLine-color);
+        }
+    }
+}

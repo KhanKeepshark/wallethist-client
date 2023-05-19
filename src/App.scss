@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --body-color: #F1F4FA;
+    --card-color: white;
+    --text-color: black;
+    --textOff-color: #808080;
+    --purple-color: #3A36DB;
+    --off-color: #99B2C6;
+    --dataLine-color: rgb(58, 54, 219, 0.1);
+
+    --tran-02: all 0.2s ease;
+    --tran-05: all 0.5s ease;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    a {
+        text-decoration: none;
+    }
+    svg {
+        color: var(--text-color);
+    }
+    div {
+        cursor: default;
+    }
+}
+    
+body {
+    background-color: var(--body-color);
+    height: 100vh;
+    transition: var(--tran-05);
+    overflow-x: hidden;
+}
+
+[class = 'dark'] {
+    --body-color: #1A202C;
+    --card-color: #364153;
+    --text-color: white;
+    --textOff-color: #C0C0C0;
+    --purple-color: #605CFF;
+    --dataLine-color: rgb(58, 54, 219, 0.5);
+}
+    
+// mixins
+
+@mixin contentCard($h, $w, $p, $bc: var(--card-color), $br: 10px) {
+    width: $w;
+    height: $h;
+    padding: $p;
+    background-color: $bc;
+    border-radius: $br;
+}
+
+@mixin flexPos($jc, $al){
+    display: flex;
+    justify-content: $jc;
+    align-items: $al;
+}

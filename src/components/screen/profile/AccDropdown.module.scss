@@ -1,0 +1,38 @@
+.dropdownList {
+    position: relative;
+}
+
+.dropdownBtn {
+    display: flex;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 15px;
+    padding: min(4%, 14px) 20px;
+    background-color: var(--body-color);
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+.content {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    border: solid 1px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transform-origin: top;
+    display: none;
+    transition: var(--tran-02);
+    height: 100px;
+    overflow-y: auto;
+    &.active {
+        display: block;
+    }
+    .item {
+        color: var(--text-color);
+        padding: min(4%, 14px) 20px;
+        background-color: var(--body-color);
+        &:hover {
+            background-color: var(--card-color);
+        }
+    }
+}
