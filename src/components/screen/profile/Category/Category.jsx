@@ -1,7 +1,7 @@
 import { faMagnifyingGlass, faPlus, faEdit, faXmark, faCheck } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect, useState } from 'react'
-import { fetchCategory, updateCategory, createCategory, deleteCategory } from '../../../../http/CategoryApi'
+import { fetchCategory, updateCategory, createCategory, deleteCategory } from '../../../../http/categoryApi'
 import styles from './Category.module.scss'
 
 export const Category = ({budgetId}) => {

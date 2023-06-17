@@ -55,3 +55,14 @@
         filter: brightness(1.5);
     }
 }
+
+@include App.mobile-screen480{
+    .record{
+        padding: 15px 25px;
+    }
+}
+@include App.mobile-screen430{
+    .record{
+        padding: 10px 25px;
+    }
+}

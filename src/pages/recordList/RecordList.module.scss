@@ -125,7 +125,7 @@
     }
 }
 
-@include App.mobile-screen{
+@include App.mobile-screen480{
     .flex{
         display: block;
         .title{
@@ -136,10 +136,55 @@
         }
         .flex{
             display: flex;
+            justify-content: space-around;
+        }
+    }
+    .top{
+        display: block;
+        margin-bottom: 0;
+    }
+    .topBtn{
+        .newRecord{
+            span{
+                display: none;
+            }
         }
     }
     .dropDown{
         width: 160px;
         top: 145px;
+        right: 20px;
+    }
+}
+
+@include App.mobile-screen430{
+    .flex{
+        display: block;
+        .title{
+            display: none;
+        }
+        .recordList{
+            width: 100%;
+        }
+        .flex{
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+    .top{
+        display: block;
+        margin-bottom: 0;
+    }
+    .topBtn{
+        .newRecord{
+            span{
+                display: none;
+            }
+        }
+    }
+    .dropDown{
+        width: 160px;
+        top: 145px;
+        right: 20px;
     }
 }

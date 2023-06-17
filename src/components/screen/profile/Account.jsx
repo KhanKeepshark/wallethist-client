@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { updateUsers } from '../../../http/userApi'
-import { AccDropdown } from './accDropdown'
+import { AccDropdown } from './AccDropdown'
 import styles from './Account.module.scss'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

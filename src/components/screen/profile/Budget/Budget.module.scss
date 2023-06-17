@@ -152,3 +152,14 @@
         background-color: var(--off-color);
     }
 }
+
+@include App.mobile-screen430{
+    .title{
+        font-size: 20px;
+    }
+    .item{
+        input{
+            font-size: 13px;
+        }
+    }
+}

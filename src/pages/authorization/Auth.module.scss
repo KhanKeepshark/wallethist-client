@@ -69,7 +69,7 @@
     @include App.flexPos(center, center);
 }
 
-@include App.mobile-screen{
+@include App.mobile-screen480{
 
     .auth{
         width: 100%;

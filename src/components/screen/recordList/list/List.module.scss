@@ -43,3 +43,14 @@
     font-size: 60px;
     color: var(--off-color);
 }
+
+@include App.mobile-screen480{
+    .heading{
+        display: none;
+    }
+}
+@include App.mobile-screen430{
+    .heading{
+        display: none;
+    }
+}

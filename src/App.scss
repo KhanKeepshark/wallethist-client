@@ -61,10 +61,19 @@ body {
     align-items: $al;
 }
 
-@mixin mobile-screen {
-    @media screen and (max-width: 480px) {
+@mixin mobile-screen480 {
+    @media screen and (min-width: 431px) and (max-width: 480px){
         * {
             font-size: 15px;
+        }
+        @content;
+    }
+}
+
+@mixin mobile-screen430 {
+    @media screen and (max-width: 430px) {
+        * {
+            font-size: 13px;
         }
         @content;
     }

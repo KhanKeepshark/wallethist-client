@@ -25,10 +25,25 @@
     }
 }
 
-@include App.mobile-screen{
+@include App.mobile-screen480{
     .box{
         margin: 5px;
         width: 80%;
         padding: 15px 24px;
+    }
+}
+
+@include App.mobile-screen430{
+    .box{
+        margin: 5px;
+        width: 80%;
+        padding: 15px 24px;
+        .number{
+            font-size: 20px;
+        }
+        svg{
+            width: 40px;
+            height: 40px;
+        }
     }
 }
