@@ -36,6 +36,7 @@
         &.close {
             display: none;
         }
+        z-index: 1;
     }
     svg {
         color: var(--text-color);
@@ -60,9 +61,19 @@
     .record{
         padding: 15px 25px;
     }
+    .settings{
+        .recordSettings{
+            right: -20px;
+        }
+    }
 }
 @include App.mobile-screen430{
     .record{
         padding: 10px 25px;
+    }
+    .settings{
+        .recordSettings{
+            right: -20px;
+        }
     }
 }

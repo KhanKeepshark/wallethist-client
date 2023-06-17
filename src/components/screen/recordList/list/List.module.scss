@@ -48,9 +48,19 @@
     .heading{
         display: none;
     }
+    .list{
+        span:nth-child(5){
+            display: none;
+        }
+    }
 }
 @include App.mobile-screen430{
     .heading{
         display: none;
+    }
+    .list{
+        span:nth-child(5){
+            display: none;
+        }
     }
 }

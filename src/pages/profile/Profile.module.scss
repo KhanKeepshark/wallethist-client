@@ -103,6 +103,9 @@
     .left .top span{
         font-size: 20px;
     }
+    .settings {
+        padding: 0;
+    }
 }
 
 @include App.mobile-screen430{
@@ -115,6 +118,9 @@
             width: 100%;
             padding: 0;
         }
+    }
+    .settings {
+        padding: 0;
     }
     .img{
         width: 100px;

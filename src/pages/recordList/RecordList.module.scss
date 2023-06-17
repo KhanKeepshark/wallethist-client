@@ -85,6 +85,7 @@
     transform-origin: top;
     transition: var(--tran-02);    
     color: var(--text-color);
+    z-index: 1;
     .item {
         padding: 10px;
         cursor: pointer;
@@ -139,6 +140,9 @@
             justify-content: space-around;
         }
     }
+    .search{
+        width: 100%;
+    }
     .top{
         display: block;
         margin-bottom: 0;
@@ -170,6 +174,9 @@
             display: flex;
             justify-content: space-around;
         }
+    }
+    .search{
+        width: 100%;
     }
     .top{
         display: block;
