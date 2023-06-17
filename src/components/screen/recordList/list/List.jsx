@@ -44,8 +44,6 @@ export const List = ({records, setSearchAttr, setDbUpdate}) => {
         setDbUpdate(true)
     }
 
-    console.log(checkList, checkAll)
-
     return (
         <div className={styles.list}>
             <div className={styles.heading}>

@@ -1,7 +1,7 @@
 import styles from './Sidebar.module.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faChartColumn, faList, faRightFromBracket, faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
-import { useContext, useEffect } from 'react'
+import { faChartColumn, faList, faRightFromBracket, faMoon, faSun, faBars } from '@fortawesome/free-solid-svg-icons'
+import { useContext, useEffect, useState } from 'react'
 import { Context } from '../../../main'
 import { Link } from 'react-router-dom'
 import { AUTH_ROUTE, HOME_ROUTE, PROFILE_ROUTE, RECORD_LIST_ROUTE } from '../../routes/pathConsts'
@@ -10,6 +10,7 @@ import { observer } from 'mobx-react-lite'
 const Sidebar = observer(({activeNav}) => {
     const active = activeNav
     const {navState, store} = useContext(Context)
+    const [mobNav, setMobNav] = useState(false)
 
     useEffect(() => {
         if (navState.darkMode) {
@@ -25,14 +26,21 @@ const Sidebar = observer(({activeNav}) => {
         }
     }
 
+    const closeNavbar = e => {
+        mobNav ? setMobNav(false) : null
+    }
+
     return (
         
-        <nav className={`${styles.sidebar} ${navState.navClose && styles.close}`} >
+        <nav className={`${styles.sidebar} ${navState.navClose && styles.close} ${mobNav && styles.mobClose}`} onClick={closeNavbar}>
             <header>
-                <div className={styles.imageText} onClick={closeSidebar}>
-                    <img className={styles.logoImg} src="logo.png" alt="logo" onClick={closeSidebar}/>
+                <div className={styles.imageText} >
+                    <img className={styles.logoImg} src="logo.png" alt="logo"/>
                 </div>
             </header>
+            <div className={styles.toggleBlock} onClick={e => setMobNav(true)}>
+                <FontAwesomeIcon icon={faBars} />
+            </div>
             <div className={styles.menuBar} onClick={closeSidebar}>
                 <div className={styles.menu}>
                     <li className={active === 1 && styles.active}>

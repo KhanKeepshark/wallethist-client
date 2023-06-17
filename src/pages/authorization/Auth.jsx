@@ -16,8 +16,9 @@ export const Auth = () => {
     const {store} = useContext(Context)
     const navigate = useNavigate()
 
-    const authSubmit = () => {
+    const authSubmit = (event) => {
         store.authUser(name, password, regForm, navigate, setError)
+        event.preventDefault()
     }
 
     return (

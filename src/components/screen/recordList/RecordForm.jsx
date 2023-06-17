@@ -12,7 +12,7 @@ export const RecordForm = ({darkMode, isClose, setIsClose, setDbUpdate}) => {
     const [categoryList, setCategoryList] = useState([])
     const [walletList, setWalletList] = useState([])
     const {store} = useContext(Context)
-    const [newRecordData, setNewRecordData] = useState({BudgetId: store._budget.id, description: 'Пусто'})
+    const [newRecordData, setNewRecordData] = useState({BudgetId: store._budget.id, description: ''})
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -41,16 +41,15 @@ export const RecordForm = ({darkMode, isClose, setIsClose, setDbUpdate}) => {
     }
 
     const createNewRecord = () => {
-        if (newRecordData.description === '') {
-            newRecordData.description = 'Пусто'
-        }
+        let count
+        newRecordData.description != '' ? count = 6 : count = 5
         let validNewRecord = Object.values(newRecordData).filter(e => e != '')
-        if (validNewRecord.length === 6) {
-            console.log('Не заполнены все поля')
+        if (validNewRecord.length === count) {
+            console.log(validNewRecord)
             createRecord(newRecordData)
             return setDbUpdate(true)
         }
-        console.log('Не заполнены все поля')
+        console.log(validNewRecord)
     }
 
     return (

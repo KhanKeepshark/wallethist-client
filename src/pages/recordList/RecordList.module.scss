@@ -124,3 +124,22 @@
         color: var(--card-color);
     }
 }
+
+@include App.mobile-screen{
+    .flex{
+        display: block;
+        .title{
+            display: none;
+        }
+        .recordList{
+            width: 100%;
+        }
+        .flex{
+            display: flex;
+        }
+    }
+    .dropDown{
+        width: 160px;
+        top: 145px;
+    }
+}

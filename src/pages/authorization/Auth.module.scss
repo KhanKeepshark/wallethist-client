@@ -68,3 +68,33 @@
     width: calc(100%);
     @include App.flexPos(center, center);
 }
+
+@include App.mobile-screen{
+
+    .auth{
+        width: 100%;
+        padding: 170px 60px;
+        label {
+            margin: 10px 0;
+        }
+    }
+
+    .mainPageBg{
+        display: none;
+    }
+
+    .iconInput{
+        input{
+            font-size: 15px;
+            padding: 12px 15px;
+        }
+        svg{
+            top: 42%;
+        }
+    }
+
+    .authBtn {
+        padding: 12px 0;
+        margin: 15px 0;
+    }
+}
