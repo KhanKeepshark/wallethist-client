@@ -56,6 +56,7 @@ export const Auth = () => {
                     {regForm ? 'Есть аккаунт?' :  'Нету аккаунта?'} 
                     <span onClick={e => setRegForm(!regForm)}>{regForm ? 'Авторизоваться' :  'Регистрация'}</span>
                 </div>
+                <div className={styles.testacc}>Тестовый аккаунт <br />Логин и пароль: login</div>
             </form>
             <div className={styles.mainPageBg}>
                 <img src="mainPageBg.png" alt="mainPageBg" />
